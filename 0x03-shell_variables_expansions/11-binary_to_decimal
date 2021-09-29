@@ -1,2 +1,2 @@
 #!/bin/bash
-$((BYNARY#10))
+echo $((2#BYNARY))
