@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# displays luck for country.
 
 number=0
 

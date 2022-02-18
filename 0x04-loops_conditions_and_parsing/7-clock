@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# displays Hours.
 
 minu=0
 hour=0
