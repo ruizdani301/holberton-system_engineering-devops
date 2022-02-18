@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+number=10
+
+while [ $number -gt 0 ];do
+
+    if [ $number == 1 ];then
+        echo $"Hi"
+    fi
+    echo $"Best School"
+    (( number -- ))
+done

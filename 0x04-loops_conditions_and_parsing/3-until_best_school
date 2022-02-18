@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+number=10
+
+until [ $number -lt 1 ];do
+
+    echo $"Best School"
+    (( number -- ))
+
+done

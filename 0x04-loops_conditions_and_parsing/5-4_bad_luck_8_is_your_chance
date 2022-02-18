@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+number=0
+
+while [ $number -lt 10 ];do
+
+    if [ $number == 3 ];then
+        echo $"bad luck"
+    elif [ $number == 7 ];then
+        echo $"good luck"
+    else
+        echo $"Best School"
+    fi
+    (( number ++ ))
+done
