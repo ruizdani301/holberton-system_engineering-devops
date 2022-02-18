@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 # displays Holberton School 10 times.
 
-number=10
+number=0
 
-while [ $number -gt 0 ];do
+while [ $number -lt 10 ];do
 
     echo $"Best School"
-    (( number-- ))
-
+    (( number++ ))
 done
