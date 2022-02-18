@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#display process with bash
+
+ps -faux | pgrep -l "bash"
