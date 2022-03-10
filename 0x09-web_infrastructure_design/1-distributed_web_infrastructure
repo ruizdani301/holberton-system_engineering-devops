@@ -1,0 +1,36 @@
+1. Distributed web infrastructure
+___________________________________________________________
+
+For every additional element, why you are adding it
+
+    In this graph we add a load balancer (HAProxy).
+    HAProxy is a load balancer. Not familiar with the term? A load balancer helps you handle more web traffic and avoid downtime. A load balancer receives traffic from the Internet (or from your internal network, if we’re talking about load balancing an internal service) and then forwards that traffic to your web server.
+    The benefits of using a load balancer are realized once you’ve deployed multiple web servers. The load balancer can then relay traffic to each of them, allowing you to grow your capacity to serve more clients without asking those clients to connect to each server directly
+
+What distribution algorithm your load balancer is configured
+with and how it works
+    Round Robin: Round Robin passes each new connection request to the next server in line, eventually distributing connections evenly across the array of machines being load balanced. Round Robin works well in most configurations, but could be better if the equipment that you are load balancing is not roughly equal in processing speed, connection speed, and/or memory.
+
+Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+
+    This diagram the balancer is Active – Active
+    what it consists of is explained below
+    Active-Active: All nodes in the cluster receive a portion of the same load.
+    Active-Passive: The load is assumed by one of the nodes and in the event of a fall.
+
+
+How a database Primary-Replica (Master-Slave) cluster works
+
+    The master logs the updates, which are then transmitted to the slaves. The slave issues a message indicating that it has received the update successfully, allowing subsequent updates to be sent. Master-slave replication can be synchronous or asynchronous. The difference is simply the timing of the propagation of the changes. If changes are made to the master and slave at the same time, it is synchronous. If changes are queued
+
+What is the difference between the Primary node and the Replica node in regard to the application.
+    •	The primary node can do read/write, but mostly write, while Replica only does read
+____________________________________________________________
+    You must be able to explain what the issues are with this infrastructure:
+____________________________________________________________
+Where are SPOF.
+    if the Primary MySQL database server is down, the entire site would be unable to make changes to the site (including adding or removing users). The server containing the load balancer and the application server connecting to the primary database server are also SPOFs.
+Security issues (no firewall, no HTTPS)
+    The data transmitted over the network isn't encrypted using an SSL certificate so hackers can spy on the network. There is no way of blocking unauthorized IPs since there's no firewall installed on any server.
+No monitoring:
+    we cannot track and know the status of the servers and services jsince we cannot monitor them in order to avoid downtime
