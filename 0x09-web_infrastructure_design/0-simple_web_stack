@@ -1,0 +1,53 @@
+Description:
+_________________________________________________________________________
+
+A lot of websites are powered by simple web infrastructure,
+a lot of time it is composed of a single server with a LAMP
+stack.
+On a whiteboard, design a one server web infrastructure
+that hosts the website that is reachable via www.foobar.com.
+Start your explanation by having a user wanting to access your
+website.
+__________________________________________________________________________
+<ul>
+
+<ul>What is a server</li>
+server within a web infrastructure, is a computer capable
+of handling a client's request and responding accordingly
+
+<ul>What is the role of the domain name</li>
+Allows the translation of a name to an IP address (Internet Protocol Address). Exemple www.coquito.com  to 192.168.4.25
+
+<ulWhat type of DNS record www is in www.foobar.com</li>
+www.foobar.com uses an A record. This can be checked by running dig www.foobar.com.
+Note: the results might be different but for the infrastructure in this design, an A record is used.
+Address Mapping record (A Record)—also known as a DNS host record, stores a hostname and its corresponding IPv4 address.
+
+<ulWhat is the role of the web server</li>
+The main function of a web server is to store and transmit the requested content of a website to the user's browser.
+
+<ulWhat is the role of the application server.</li>
+Application servers are server programs on a distributed network that provide the execution environment
+for an application program. More specifically, the application server is the main runtime component in all
+setups and where an application actually runs. The application server collaborates with the web server to provide
+a dynamic and personalized response to a client request.
+
+<ulWhat is the role of the database.</li>
+A database (database) stores data and connects it in a logical unit together with the metadata necessary for its
+processing. Databases are very useful instruments for managing large files and facilitating the consultation of information.
+
+<ulWhat is the server using to communicate with the computer of the user requesting the website.</li>
+The server uses the http protocol to communicate with the computer requesting the service
+____________________________________________________________________________________________________________________
+You must be able to explain what the issues are with this infrastructure:
+<ul>SPOF</li>
+Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+Cannot scale if too much incoming traffic
+
+<ul>Cannot scale if there's too much incoming traffic.</li>
+It would be hard to scale this infrastructure because one server contains the required components. The server can quickly
+run out of resources or slow down when it starts receiving a lot of requests.
+
+<li>if the MySQL database server was down, the entire website would be down.</li>
+Since there is only one server, if maintenance is required, there will most likely be no service, leading to downtime.
+</ul>
