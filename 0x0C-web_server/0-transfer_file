@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+scp -i /home/ruizdani301/ archivo_local.txt user@0.0.0.3:/var/www/example.com/archivo_en_remoto.xml
