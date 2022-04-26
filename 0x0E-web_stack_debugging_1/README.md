@@ -1,6 +1,6 @@
 # 
 ***
-## Web stack debugging
+## 🤯 Web stack debugging
 ### 
 
 For Holberton School
