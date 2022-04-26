@@ -1,6 +1,6 @@
 # 
 ***
-## This is a README.md for Web stack debugging
+## Web stack debugging
 ### 
 
 For Holberton School
@@ -20,7 +20,7 @@ Cohort 16.
 
 | File                 | Details                                    |
 |--------------------- | ------------------------------------------ |
-| [0-nginx_likes_port_80](link del archivo en github.com) |Procura corregir un eeror, ya que el servidor nginx no funciona|
+| [0-nginx_likes_port_80](https://github.com/ruizdani301/holberton-system_engineering-devops/blob/master/0x0E-web_stack_debugging_1/0-nginx_likes_port_80) |Procura corregir un eeror, ya que el servidor nginx no funciona|
 | []() |	       |
 
 
