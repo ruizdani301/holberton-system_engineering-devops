@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 #file config is corrected
-sudo service nginx stop
-sudo sed -i 's/sites-enabled/sites-available/' /etc/nginx/nginx.conf
-sudo service nginx restart
+sudo sed -i "s/sites-enabled/sites-available/" /etc/nginx/nginx.conf
+pkill -1 nginx
