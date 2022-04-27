@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #instalation of nginx and header name
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get install haproxy
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt-get install -y haproxy
 sudo sed -i "$ a\ENABLED=1" /etc/default/haproxy
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.original
 sudo sed -i "$ a\ \tlisten ruizdani \n\tmode http\n\tbind *:80\n\tbalance roundrobin\n\tserver 3819-web-01 34.75.234.107:80 check\n\tserver 3819-web-02 3.84.184.141:80 check" /etc/haproxy/haproxy.cfg
