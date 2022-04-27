@@ -5,5 +5,5 @@ sudo apt-get -y upgrade
 sudo apt-get install haproxy
 sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLE=1' /etc/default/haproxy
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.original
-sed -i '$ a\listen ruizdani\nbind *:80\nbalance roundrobin\nserver 3819-web-01 34.75.234.107:80 check\nserver 3819-web-02 3.84.184.141:80 check' /etc/haproxy/haproxy.cfg
+sed -i "$ a\listen ruizdani \nbind *:80\n mode http\nbalance roundrobin\nserver 3819-web-01 34.75.234.107:80 check\nserver 3819-web-02 3.84.184.141:80 check" /etc/haproxy/haproxy.cfg
 sudo service haproxy start
