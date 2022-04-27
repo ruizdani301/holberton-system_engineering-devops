@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #instalation of nginx and header name
-
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get install haproxy
