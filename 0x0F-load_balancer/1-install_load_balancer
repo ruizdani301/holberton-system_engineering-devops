@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#instalation of nginx and header name
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get install haproxy
+sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLE=1' /etc/default/haproxy
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.original
+sed -i '/errorfile 504 /etc/haproxy/errors/504.http/a listen ruizdani\nbind *:80\nbalance roundrobin\nserver 3819-web-01 34.75.234.107:80 check\nserver 3819-web-02 3.84.184.141:80 check' /etc/haproxy/haproxy.cfg
+sudo service haproxy start
