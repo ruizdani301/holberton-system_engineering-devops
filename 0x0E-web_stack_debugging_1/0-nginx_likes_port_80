@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# se corrige archivo side enable
+#file site-enable is corrected
 sudo rm /etc/nginx/site-enable/default
 sudo ln -s /etc/nginx/site-available/default /etc/nginx/site-enable/default
+sudo sed -i 's/sites-enabled/sites-available/' /etc/nginx/nginx.conf
 sudo pkill nginx
 sudo service nginx start
