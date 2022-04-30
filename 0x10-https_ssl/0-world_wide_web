@@ -1,0 +1,3 @@
+linea = dig argv[1] + "." + argv[2] df | awk '/^argv[1]/ {print}'
+trozo = linea | awk 'BEGIN{FS=" "}'
+IP = $
