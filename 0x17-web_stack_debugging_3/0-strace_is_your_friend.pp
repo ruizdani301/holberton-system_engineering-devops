@@ -1,4 +1,5 @@
-exec {'sed':
-command => 'sed -i s/class-wp-locale.phpp/class-wp-locale.php/g /var/www/html/wp-settings.php',
-path    => ['/bin', '/usr/bin', '/usr/sbin'],
+# Fixes  apache2 server with error 500
+exec { 'error 500':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php; sudo service apache2 restart',
+  path    => ['/bin', '/usr/bin', '/usr/sbin']
 }
