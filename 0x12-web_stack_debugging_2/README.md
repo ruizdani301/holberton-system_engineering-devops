@@ -10,8 +10,7 @@ Cohort 16.
 ### General
 
 #### Resources:
-Load balancer
-Web stack debugging
+* Web stack debugging
 #### Read or watch:
 Introduction to load-balancing and HAproxy
 HTTP header
