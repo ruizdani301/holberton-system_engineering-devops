@@ -1,5 +1,5 @@
 # Fixes  nginx
 exec { 'nginx':
-  command  => 'echo "ULIMIT=\"-n 25000\"" > /etc/default/nginx && sudo service nginx restart',
+  command  => "sed -i '4i worker_rlimit_nofile 1048576 /etc/nginx/nginx.conf;",
   provider => shell,
 }
