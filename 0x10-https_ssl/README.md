@@ -40,4 +40,4 @@ Bash function
 ***
 *Holberton School Student*
 
-Daniel ruiz  - [Github](https://github.com/ruizdani301) - [Twiter](https://twitter.com/@ruizdani301) [LnK]()
+Daniel ruiz  - [Github](https://github.com/ruizdani301) - [Twiter](https://twitter.com/@ruizdani301) [in](www.linkedin.com/in/daniel-ruiz-6925aa224)
