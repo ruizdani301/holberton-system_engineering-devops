@@ -1,27 +1,27 @@
 #!/usr/bin/python3
-"""using this REST API,
-for a given employee ID,
-return list progress"""
+"""
+Uses https://jsonplaceholder.typicode.com to return information about all
+employee's todo list progress
+"""
+
 import json
 import requests
-from sys import argv
 
-if __name__ == "__main__":
-    user = requests.get('https://jsonplaceholder.typicode.com/users/' +
-                        argv[1])
-    user_json = user.json()
-    task = ""
-    dicci = {}
-    lista = []
-    todos = requests.get('https://jsonplaceholder.typicode.com/todos')
-    for t in todos.json():
-        if t.get('userId') == int(argv[1]):
-            dictio = {}
-            dictio["task"] = t["title"]
-            dictio["completed"] = t["completed"]
-            dictio["username"] = user_json["username"]
-            lista.append(dictio)
-            dicci[t["userId"]] = lista
-    filename = argv[1] + ".json"
-    with open(filename, "w") as outfile:
-        json.dump(dicci, outfile)
+if __name__ == '__main__':
+    users = requests.get("https://jsonplaceholder.typicode.com/users/")
+    userdict = {}
+    usernamedict = {}
+    for user in users.json():
+        uid = user.get("id")
+        userdict[uid] = []
+        usernamedict[uid] = user.get("username")
+    todo = requests.get("https://jsonplaceholder.typicode.com/todos")
+    for task in todo.json():
+        taskdict = {}
+        uid = task.get("userId")
+        taskdict["task"] = task.get('title')
+        taskdict["completed"] = task.get('completed')
+        taskdict["username"] = usernamedict.get(uid)
+        userdict.get(uid).append(taskdict)
+    with open("todo_all_employees.json", 'w') as jsonfile:
+        json.dump(userdict, jsonfile)
