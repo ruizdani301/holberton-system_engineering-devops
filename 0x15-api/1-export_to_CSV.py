@@ -7,9 +7,8 @@ from sys import argv
 if __name__ == "__main__":
 
     user = requests.get('https://jsonplaceholder.typicode.com/users/' + argv[1]
-                        )
-    user_dic = user.json()
-    user = user_dic["username"]
+                        ).json()
+    username = user.get("username")
 
     taskarr = []
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
@@ -17,7 +16,7 @@ if __name__ == "__main__":
         if t.get('userId') == int(argv[1]):
             task = {}
             task["user_id"] = t["userId"]
-            task["username"] = user
+            task["username"] = username
             task["completed"] = t["completed"]
             task["title"] = t["title"]
             taskarr.append(task)
