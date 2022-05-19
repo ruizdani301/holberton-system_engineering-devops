@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     try:
         id = "{}.csv".format(argv[1])
-        with open(id, 'w') as f:
+        with open(id, 'w', newline='') as f:
             writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             for elem in taskarr:
                 writer.writerow(elem.values())
