@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """using this REST API, for a given employee ID, return list progress"""
-import requests
 import csv
+import requests
 from sys import argv
 
 if __name__ == "__main__":
@@ -13,7 +13,6 @@ if __name__ == "__main__":
 
     taskarr = []
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
-    labels = ['user_id', 'username', 'completed', 'title']
     for t in todos.json():
         if t.get('userId') == int(argv[1]):
             task = {}
@@ -26,10 +25,8 @@ if __name__ == "__main__":
     try:
         id = argv[1] + ".csv"
         with open(id, 'w') as f:
-            writer = csv.DictWriter(f, fieldnames=labels,
-                                    quoting=csv.QUOTE_ALL)
-            writer.writeheader()
+            writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             for elem in taskarr:
-                writer.writerow(elem)
+                writer.writerow(elem.values())
     except IOError:
         print("I/O error")
