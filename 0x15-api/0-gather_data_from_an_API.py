@@ -7,8 +7,8 @@ if __name__ == "__main__":
 
     i = 0
     j = 0
-    user = requests.get('https://jsonplaceholder.typicode.com/users/'
-                        + argv[1])
+    user = requests.get('https://jsonplaceholder.typicode.com/users/' + argv[1]
+                        )
     user_json = user.json()
     task = ""
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
