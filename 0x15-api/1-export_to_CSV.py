@@ -23,7 +23,7 @@ if __name__ == "__main__":
             taskarr.append(task)
 
     try:
-        id = argv[1] + ".csv"
+        id = "{}.csv".format(argv[1])
         with open(id, 'w') as f:
             writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             for elem in taskarr:
