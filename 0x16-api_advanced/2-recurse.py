@@ -15,7 +15,6 @@ def recurse(subreddit, hot_list=[]):
         url = 'https://www.reddit.com/r/{}.json'.format(subreddit)
         if after:
             url = url + '?after={}'.format(after)
-            print(url)
         getting = get(url, headers=header, allow_redirects=False).json()
         for children in getting['data']['children']:
             hot_list.append(children.get('data').get('title'))
